@@ -1,0 +1,103 @@
+#+TITLE: Pedestrian Attention Detection
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:{} arch:headline 
+#+OPTIONS: author:nil c:nil creator:comment d:(not "LOGBOOK") date:t
+#+OPTIONS: e:t email:nil f:t inline:t num:t p:nil pri:nil stat:t
+#+OPTIONS: tags:t tasks:t tex:t timestamp:t toc:nil todo:t |:t
+#+CREATOR: Emacs 25.2.2 (Org mode 8.2.10)
+
+#+DESCRIPTION:
+#+EXCLUDE_TAGS: noexport
+#+KEYWORDS:
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+#+LATEX_CLASS: article
+#+LATEX_HEADER: \usepackage{graphicx}
+#+LATEX_HEADER: \usepackage{amsmath}
+#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
+
+
+
+* Introduction
+
+  This repository contains the code and the documentation for the EECS
+  504 project (Winter 2018).
+
+** Rationale
+
+   In the drive towards increased vehicle autonomy, one hurdle is the
+   detection and anticipation of pedestrians.  Of course, given the
+   complex nature of human interaction with the environment,
+   especially in cityscapes, we thought that studying the attention of
+   people crossing the streets is paramount to building better self
+   driving cars.  
+
+   Now, if we can classify the most common mistakes that people make
+   which will take away attention from the road (like appreciating
+   those expensive shoes or chatting with your significant, probably
+   soon to be widowed other), we essentially have more information at
+   the autonomous vehicle to make a better call.
+
+   While RCNN and its ilk
+   cite:DBLP:journals/corr/RenHG015,DBLP:journals/corr/Girshick15,DBLP:journals/corr/GirshickDDM13
+   can detect people well, intent is not known from the masks and
+   that's an additional step that needs to be done.
+
+
+   By using a pose estimator cite:DBLP:journals/corr/CaoSWS16,
+   we can reduce the problem of pedestrian attention/awareness
+   detection to one that works on classifying poses of skeletons.
+
+   Another possible advantage of this approach (only envisioned, of
+   course) is that we can generate synthetic data as we the pose
+   machine already reduces the state space search to a much smaller
+   domain (angles and their relative movements) and generating data
+   for this domain should be a lot easier as well.
+   
+
+** Scope of this work.
+
+   In this work, we restrict ourselves to the common patterns of
+   distractions.  One of them is not looking at the ground and another
+   is gazing into the deep, dark void of a smartphone.
+   
+   Also, we use the pose estimator from CMU
+   cite:DBLP:journals/corr/CaoSWS16,simon2017hand to get the
+   skeletons.  We then trained it on a minimal set of data we could
+   acquire to train an ensemble of single class SVMs.  The data was
+   essentially the angles between the different keypoints output by
+   the previous stage.
+
+   We classify single frames and not sequences in this work.
+
+** Future work
+   There are tons of ways to expand this.  I'm listing some of them
+   and will add more as we go along.  Issues have been opened for all
+   these.
+
+   - [ ] Use tracking when a person is occluded (Particle filters) and
+     their last movement was towards the road.
+   - [ ] Use LSTMs to train what people are likely to do from a given
+     action.
+   - [ ] Generate synthetic data maybe using GANs or Unity3D?
+   - [ ] Better metric for error.  
+   - [ ] Replace SVMs with a single neural net and use it in training
+     of the pose estimator.
+   
+** A brief introduction to the architecture
+
+   - Get the pose estimate.
+   - Get angles between the different skeletons.
+   - Use the ensemble of single class SVMs to see if they fall in any
+     of the dangerous categories.
+     
+   NOTE: Additionally, in the project implementation, we used Hough
+   transforms to find the pavement and reduce the region of interest
+   to only the road.  However, with further thought, it may be better
+   to actually look at the entire region.
+
+
+   
+* References
+
+  bibliographystyle:ACM-Reference-Format
+  bibliography:references.bib
