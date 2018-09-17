@@ -96,6 +96,11 @@
    to actually look at the entire region.
 
 
+** SubModules
+
+   The openpose library is used as a sub-module here.
+   
+   https://github.com/CMU-Perceptual-Computing-Lab/openpose.git
    
 * References
 
