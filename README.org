@@ -104,5 +104,103 @@
    
 * References
 
-  bibliographystyle:ACM-Reference-Format
-  bibliography:./references.bib
+  @article{DBLP:journals/corr/CaoSWS16,
+  author    = {Zhe Cao and
+  Tomas Simon and
+  Shih{-}En Wei and
+  Yaser Sheikh},
+  title     = {Realtime Multi-Person 2D Pose Estimation using Part Affinity Fields},
+  journal   = {CoRR},
+  volume    = {abs/1611.08050},
+  year      = {2016},
+  url       = {http://arxiv.org/abs/1611.08050},
+  archivePrefix = {arXiv},
+  eprint    = {1611.08050},
+  timestamp = {Mon, 13 Aug 2018 16:47:26 +0200},
+  biburl    = {https://dblp.org/rec/bib/journals/corr/CaoSWS16},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+  }
+  
+  
+  
+  
+  @article{DBLP:journals/corr/abs-1802-00434,
+  author    = {Riza Alp G{\"{u}}ler and
+  Natalia Neverova and
+  Iasonas Kokkinos},
+  title     = {DensePose: Dense Human Pose Estimation In The Wild},
+  journal   = {CoRR},
+  volume    = {abs/1802.00434},
+  year      = {2018},
+  url       = {http://arxiv.org/abs/1802.00434},
+  archivePrefix = {arXiv},
+  eprint    = {1802.00434},
+  timestamp = {Mon, 13 Aug 2018 16:46:31 +0200},
+  biburl    = {https://dblp.org/rec/bib/journals/corr/abs-1802-00434},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+  }
+  
+  
+  
+  @article{DBLP:journals/corr/GirshickDDM13,
+  author    = {Ross B. Girshick and
+  Jeff Donahue and
+  Trevor Darrell and
+  Jitendra Malik},
+  title     = {Rich feature hierarchies for accurate object detection and semantic
+  segmentation},
+  journal   = {CoRR},
+  volume    = {abs/1311.2524},
+  year      = {2013},
+  url       = {http://arxiv.org/abs/1311.2524},
+  archivePrefix = {arXiv},
+  eprint    = {1311.2524},
+  timestamp = {Mon, 13 Aug 2018 16:48:09 +0200},
+  biburl    = {https://dblp.org/rec/bib/journals/corr/GirshickDDM13},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+  }
+  
+  
+  
+  @article{DBLP:journals/corr/Girshick15,
+  author    = {Ross B. Girshick},
+  title     = {Fast {R-CNN}},
+  journal   = {CoRR},
+  volume    = {abs/1504.08083},
+  year      = {2015},
+  url       = {http://arxiv.org/abs/1504.08083},
+  archivePrefix = {arXiv},
+  eprint    = {1504.08083},
+  timestamp = {Mon, 13 Aug 2018 16:49:11 +0200},
+  biburl    = {https://dblp.org/rec/bib/journals/corr/Girshick15},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+  }
+  
+  
+  
+  @article{DBLP:journals/corr/RenHG015,
+  author    = {Shaoqing Ren and
+  Kaiming He and
+  Ross B. Girshick and
+  Jian Sun},
+  title     = {Faster {R-CNN:} Towards Real-Time Object Detection with Region Proposal
+  Networks},
+  journal   = {CoRR},
+  volume    = {abs/1506.01497},
+  year      = {2015},
+  url       = {http://arxiv.org/abs/1506.01497},
+  archivePrefix = {arXiv},
+  eprint    = {1506.01497},
+  timestamp = {Mon, 13 Aug 2018 16:46:02 +0200},
+  biburl    = {https://dblp.org/rec/bib/journals/corr/RenHG015},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+  }
+  
+  
+  
+  @inproceedings{simon2017hand,
+  author = {Tomas Simon and Hanbyul Joo and Iain Matthews and Yaser Sheikh},
+  booktitle = {CVPR},
+  title = {Hand Keypoint Detection in Single Images using Multiview Bootstrapping},
+  year = {2017}
+}
