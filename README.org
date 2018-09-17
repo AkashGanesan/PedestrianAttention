@@ -105,4 +105,4 @@
 * References
 
   bibliographystyle:ACM-Reference-Format
-  bibliography:references.bib
+  bibliography:./references.bib
